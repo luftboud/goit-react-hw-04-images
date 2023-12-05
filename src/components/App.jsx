@@ -46,15 +46,18 @@ const App = () =>  {
       const response = await axios.get(
         `/?key=${API_KEY}&q=${q}&page=${page}&image_type=photo&orientation=horizontal&per_page=12`
       );
-
       const new_hits = response.data.hits;
-      setHits([...hits, ...new_hits]);
+      // setHits([...hits, ...new_hits]);
+      setHits((prevHits) => 
+        [...prevHits, ...new_hits]
+      );
       setBoolean(false);
-
       if (hits.length + new_hits.length >= page * 12) {
-        setButton("visible");
-      } else {
-        setButton("unvisible");
+        if (hits.length + new_hits.length >= page * 12) {
+          setButton("visible");
+        } else {
+          setButton("unvisible");
+        }
       }
     } catch (error) {
       console.error("Error fetching data:", error);

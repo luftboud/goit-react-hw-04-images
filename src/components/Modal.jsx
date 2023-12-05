@@ -6,19 +6,19 @@ const Modal = ({ img, onClick }) => {
         evt.preventDefault();
         onClick()
     }
-    function escape(evt) {
-        evt.preventDefault();
-            if (evt.key === "Escape") {
-            onClick()
-            }
-    }
-     useEffect(() => {
+    useEffect(() => {
+         function escape(evt) {
+             evt.preventDefault();
+                 if (evt.key === "Escape") {
+                 onClick()
+                 }
+         }
     document.addEventListener('keydown', escape);
 
     return () => {
       document.removeEventListener('keydown', escape);
     };
-  }, []); 
+  }, [onClick]); 
     return (
         <div className={css.Overlay} onClick={modalClick}>
             <div className={css.Modal}>
