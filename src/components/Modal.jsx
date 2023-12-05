@@ -18,7 +18,7 @@ const Modal = ({ img, onClick }) => {
     return () => {
       document.removeEventListener('keydown', escape);
     };
-  }); 
+  }, []); 
     return (
         <div className={css.Overlay} onClick={modalClick}>
             <div className={css.Modal}>
