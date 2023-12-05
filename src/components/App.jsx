@@ -53,11 +53,12 @@ const App = () =>  {
       );
       setBoolean(false);
 
-        if (hits.length + new_hits.length >= page * 12) {
-          setButton("visible");
-        } else {
-          setButton("unvisible");
-        }
+        // if (hits.length + new_hits.length >= page * 12) {
+        //   setButton("visible");
+        // } else {
+        //   setButton("unvisible");
+      // }
+      setButton(page < Math.ceil(response.data.totalHits / 12) ? "visible" : "unvisible" )
       
     } catch (error) {
       console.error("Error fetching data:", error);
