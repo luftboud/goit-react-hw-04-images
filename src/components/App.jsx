@@ -11,7 +11,7 @@ axios.defaults.baseURL = 'https://pixabay.com/api';
 
 const App = () =>  {
 
-  const [q, setQ] = useState('random');
+  const [q, setQ] = useState('');
   const [page, setPage] = useState(1);
   const [hits, setHits] = useState([]);
   const [loader_boolean, setBoolean] = useState(false);
@@ -37,6 +37,7 @@ const App = () =>  {
   }
 
   useEffect(() => {
+    if (!q) return;
   const fetchData = async () => {
     try {
       setBoolean(true);
@@ -47,17 +48,10 @@ const App = () =>  {
         `/?key=${API_KEY}&q=${q}&page=${page}&image_type=photo&orientation=horizontal&per_page=12`
       );
       const new_hits = response.data.hits;
-      // setHits([...hits, ...new_hits]);
       setHits((prevHits) => 
         [...prevHits, ...new_hits]
       );
       setBoolean(false);
-
-        // if (hits.length + new_hits.length >= page * 12) {
-        //   setButton("visible");
-        // } else {
-        //   setButton("unvisible");
-      // }
       setButton(page < Math.ceil(response.data.totalHits / 12) ? "visible" : "unvisible" )
       
     } catch (error) {
