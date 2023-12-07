@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { ImageGalleryItem } from './ImageGalleryItem'
-import css from './styles/ImageGallery.module.css'
+import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem'
+import css from './ImageGallery.module.css'
 const ImageGallery = ({ hits, onClick }) => {
   function showModal(evt) {
     evt.preventDefault();

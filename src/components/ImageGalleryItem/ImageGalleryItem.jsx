@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import css from './styles/ImageGalleryItem.module.css'
+import css from './ImageGalleryItem.module.css'
 const ImageGalleryItem = ({ src, alt }) => {
   return (
     <li className={css.ImageGalleryItem} >

@@ -1,5 +1,5 @@
 import PropTypes  from 'prop-types';
-import css from './styles/Searchbar.module.css'
+import css from './Searchbar.module.css'
 const Searchbar = ({ onSubmit }) => {
  function handleSearch (evt) {
     evt.preventDefault();

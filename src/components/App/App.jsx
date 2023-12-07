@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Searchbar } from './Searchbar';
-import { ImageGallery } from './ImageGallery';
-import { Button } from './Button';
+import { Searchbar } from '../Searchbar/Searchbar';
+import { ImageGallery } from '../ImageGallery/ImageGallery';
+import { Button } from '../Button/Button';
 import { Rings } from 'react-loader-spinner';
-import { Modal } from './Modal';
-import css from './styles/App.module.css'
+import { Modal } from '../Modal/Modal';
+import css from './App.module.css'
 const API_KEY = '36975406-14cef0b651718033f414d4154';
 axios.defaults.baseURL = 'https://pixabay.com/api';
 

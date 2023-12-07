@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import css from './styles/Modal.module.css'
+import css from './Modal.module.css'
 const Modal = ({ img, onClick }) => {
     function modalClick(evt) {
         evt.preventDefault();

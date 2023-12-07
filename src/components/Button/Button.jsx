@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import css from './styles/Button.module.css'
+import css from './Button.module.css'
 const Button = ({ onClick, display }) => {
   return (
     <button type="button" onClick={onClick} className={`${css.Button} ${display}`}>
